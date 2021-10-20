@@ -1,0 +1,47 @@
+package boletin6_1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ *
+ * @author dam1
+ */
+public class Boletin6_1 {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Coche ch = new Coche();
+
+        ch.setVelocidade((int) (Math.random() * 101));
+
+        int r = 0;
+
+        do {
+            System.out.println("La velocidad inicial del vehículo es de: " + ch.getVelocidade());
+            System.out.println("¿Desea acelerar o frenar?\n"
+                    + "Pulse 1 para acelerar-- \n"
+                    + "Pulse 2 para frenar-- ");
+            r = Integer.parseInt(br.readLine());
+
+            if (r == 1) {
+                ch.acelerar(0);
+
+            }
+            if (r == 2) {
+                ch.frenar(0);
+
+            } else {
+                if (r <= 0 || r > 2) {
+                    System.out.println("La respuesta escogida no es correcta. \n"
+                            + "Vuelva a intentarlo. \n"
+                            + "----------------------");
+
+                }
+
+            }
+        } while (r <= 0 || r > 2);
+    }
+}
