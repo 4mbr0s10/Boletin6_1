@@ -1,0 +1,50 @@
+
+package boletin6_1;
+
+/**
+ *
+ * @author dam1
+ */
+public class Coche {
+     private int velocidade ;
+
+    public Coche(){
+    velocidade =0 ;
+    }
+    public int getVelocidade (){
+       
+        
+        return velocidade;
+    }
+    public void setVelocidade(int velocidade){
+        
+        this.velocidade=velocidade;
+        
+        
+    }
+    public void acelerar (int valor){
+        valor=(int) (101 * Math.random());
+        int incrementada=velocidade+valor;
+        System.out.println("La velocidad se incrementa en: "+valor
+                + "\n El coche lleva la velocidad: "+incrementada);
+        
+        
+      
+    }
+    public void frenar (int menos){
+        menos=(int) (101 * Math.random());
+        int disminuida=velocidade-menos;
+        if(disminuida<=0){
+            System.out.println("El coche está parado, o yendo marcha atrás.");
+            
+            
+        }else{
+            System.out.println("La velocidad se disminuye en: "+menos
+                    + " El coche lleva la velocidad de: "+disminuida);
+            
+            
+        }
+
+    }
+    
+}
